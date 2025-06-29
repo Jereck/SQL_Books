@@ -5,7 +5,7 @@ This uses an INNER JOIN on books and book ratings to grab matching values in bot
 SELECT 
   b.title,
   b.authors,
-  AVG(r.rating) AS avg_rating,
+  ROUND(AVG(r.rating), 2) AS avg_rating, -- rounding average rating for cleaner data
   COUNT(*) AS total_ratings
 FROM
   ratings AS r
